@@ -12,7 +12,7 @@ export class GetHistoricalDataDto {
 
   @IsNumber()
   @Min(0)
-  stopTime: number;
+  endTime: number;
 
   @IsNumber()
   @Min(1)
