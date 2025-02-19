@@ -1,5 +1,5 @@
 import { AnalyzeResult } from 'src/types/analyze-result';
-import { Trade } from '../types/trade.interface';
+import { Trade } from './trade.interface';
 
 /**
  * This strategy represents what kind of "contract" each possible exchange analyzer should follow { if in the future a) multiple strategies were to be included b) new exchanges implemented it would allow them to follow the same path
