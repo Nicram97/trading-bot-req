@@ -5,7 +5,7 @@ import { BinanceService } from './binance.service';
 export class BinanceController {
   constructor(private binanceService: BinanceService) {}
 
-  @Get('hello')
+  @Get('getTrades')
   getHello() {
     return this.binanceService.getHistoricalData();
   }
