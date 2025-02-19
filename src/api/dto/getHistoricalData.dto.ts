@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { IsNotEmpty, IsNumber, IsString, Min } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString, Max, Min } from 'class-validator';
 
 export class GetHistoricalDataDto {
   @IsString()
@@ -15,6 +15,7 @@ export class GetHistoricalDataDto {
   stopTime: number;
 
   @IsNumber()
-  @Min(0)
-  limit: number;
+  @Min(1)
+  @Max(1000)
+  limit = 500;
 }

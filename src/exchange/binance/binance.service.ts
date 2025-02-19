@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
+import { GetHistoricalDataDto } from '../../api/dto/getHistoricalData.dto';
 
 @Injectable()
 export class BinanceService {
   constructor() {}
 
-  getHistoricalData() {
+  getHistoricalData(getHistoricalDataDto: GetHistoricalDataDto) {
     return 'Hello';
   }
 }
