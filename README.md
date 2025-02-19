@@ -8,11 +8,10 @@ Allow creation of a simple trading bot (for start at binance exchage in testnet 
 # install dependencies
 $ npm install
 
-# start local mongodb instance
-$ docker compose -f docker-compose.mongodb.yaml up
 ```
-### Remember to add .env file with proper API Key
-
+### Remember to add .env file with proper:
+* API_KEY=
+* BINANCE_API_URL=
 
 ## Compile and run the project
 

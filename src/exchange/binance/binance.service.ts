@@ -11,6 +11,8 @@ import axios from 'axios';
 import * as QueryString from 'node:querystring';
 import { Trade } from '../../types/trade.interface';
 
+// To trully represent Strategy pattern except Binance we should have something like "Main" service to manage multiple strategies and this service would allow setting which strategy
+// to analyze trades we want to use
 @Injectable()
 export class BinanceService {
   constructor(
