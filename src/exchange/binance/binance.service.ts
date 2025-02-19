@@ -9,6 +9,7 @@ import { ConfigService } from '@nestjs/config';
 import { Config } from '../../types/config.interface';
 import axios from 'axios';
 import * as QueryString from 'node:querystring';
+import { Trade } from '../../types/trade.interface';
 
 @Injectable()
 export class BinanceService {
@@ -17,6 +18,11 @@ export class BinanceService {
     private configService: ConfigService<Config>,
   ) {}
 
+  /**
+   * Call binance API to extract historical trades for given symbol in specific time from start to end
+   * @param getHistoricalDataDto : GetHistoricalDataDto - object representing data required for Binance Api to ask for proper resources
+   * @returns  - Array of trades
+   */
   async getHistoricalData(getHistoricalDataDto: GetHistoricalDataDto) {
     const binanceApi = this.configService.get<string>('BINANCE_API_URL', {
       infer: true,
@@ -28,7 +34,7 @@ export class BinanceService {
           { ...getHistoricalDataDto },
         )}`;
         const historicalDataReq =
-          await this.httpService.axiosRef.get(binanceEndpointUrl);
+          await this.httpService.axiosRef.get<Trade>(binanceEndpointUrl);
 
         return historicalDataReq.data;
       } catch (e) {
