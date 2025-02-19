@@ -11,6 +11,8 @@ $ npm install
 # start local mongodb instance
 $ docker compose -f docker-compose.mongodb.yaml up
 ```
+### Remember to add .env file with proper API Key
+
 
 ## Compile and run the project
 
